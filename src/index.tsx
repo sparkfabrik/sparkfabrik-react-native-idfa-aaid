@@ -1,7 +1,12 @@
 import { NativeModules } from 'react-native';
 
+export type AdvertisingInfoResponse = {
+  id: string | null;
+  isAdTrackingLimited: boolean;
+};
+
 type ReactNativeIdfaAaidType = {
-  multiply(a: number, b: number): Promise<number>;
+  getAdvertisingInfo(): Promise<AdvertisingInfoResponse>;
 };
 
 const { ReactNativeIdfaAaid } = NativeModules;

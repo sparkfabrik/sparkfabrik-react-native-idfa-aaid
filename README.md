@@ -1,21 +1,72 @@
 # @sparkfabrik/react-native-idfa-aaid
+# React Native module for getting IDFA (iOS) or AAID (Android)
 
-React Native module for getting IDFA (iOS) or AAID (Android)
+## Intro
+
+[React Native](https://reactnative.dev/) is a framework for creating native mobile apps based on React.
+
+The **Advertising Identifier** ([IDFA](https://developer.apple.com/documentation/adsupport/asidentifiermanager) on iOS, [AAID](https://developer.android.com/training/articles/ad-id) on Android) is a device-specific, unique, resettable ID for advertising that allows ddevelopers and marketers to track activity for advertising purposes.
+
+This npm module allows any mobile application built with React Native to access the Advertising ID, following the OS specific definition and user permissions.
+
+The module output in the RN framework is the following:
+
+```ts
+interface AdvertisingInfoResponse {
+  id: string; // the Advertising ID (or null if not defined/permitted)
+  isAdTrackingLimited: boolean; // the user defined permission to track
+}
+```
+
+## Supported platform
+
+- Android
+- iOS
 
 ## Installation
 
 ```sh
 npm install @sparkfabrik/react-native-idfa-aaid
 ```
+or
+
+```sh
+yarn install @sparkfabrik/react-native-idfa-aaid
+```
+
+Then run `pod install` in your `ios` folder after installation.
 
 ## Usage
 
+### iOS configuration
+
+In `info.plist` make sure to add:
+
+```plist
+<key>NSUserTrackingUsageDescription</key>
+<string>...</string>
+```
+
+### React Native components
+
+Example of a basic integration in a RN component.
+
 ```js
-import ReactNativeIdfaAaid from "@sparkfabrik/react-native-idfa-aaid";
+import ReactNativeIdfaAaid, { AdvertisingInfoResponse } from '@sparkfabrik/react-native-idfa-aaid';
 
-// ...
+const MyComponent: React.FC = () => {
+  const [idfa, setIdfa] = useState<string | null>();
 
-const result = await ReactNativeIdfaAaid.multiply(3, 7);
+  useEffect(() => {
+    ReactNativeIdfaAaid.getAdvertisingInfo()
+      .then((res: AdvertisingInfoResponse) =>
+        !res.isAdTrackingLimited ? setIdfa(res.id) : setIdfa(null),
+      )
+      .catch((err) => {
+        console.log(err);
+        return setIdfa(null);
+      });
+  }, []);
 ```
 
 ## Contributing
