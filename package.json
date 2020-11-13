@@ -1,6 +1,6 @@
 {
   "name": "@sparkfabrik/react-native-idfa-aaid",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "React Native module for getting IDFA (iOS) or AAID (Android)",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
@@ -122,7 +122,10 @@
       ]
     }
   },
-  "eslintIgnore": ["node_modules/", "lib/"],
+  "eslintIgnore": [
+    "node_modules/",
+    "lib/"
+  ],
   "prettier": {
     "quoteProps": "consistent",
     "singleQuote": true,
@@ -133,6 +136,10 @@
   "@react-native-community/bob": {
     "source": "src",
     "output": "lib",
-    "targets": ["commonjs", "module", "typescript"]
+    "targets": [
+      "commonjs",
+      "module",
+      "typescript"
+    ]
   }
 }
