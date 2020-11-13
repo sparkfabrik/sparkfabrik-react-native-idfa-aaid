@@ -1,4 +1,4 @@
-# @sparkfabrik/react-native-idfa-aaid
+@sparkfabrik/react-native-idfa-aaid
 # React Native module for getting IDFA (iOS) or AAID (Android)
 
 ## Intro
