@@ -5,7 +5,7 @@
 
 [React Native](https://reactnative.dev/) is a framework for creating native mobile apps based on React.
 
-The **Advertising Identifier** ([IDFA](https://developer.apple.com/documentation/adsupport/asidentifiermanager) on iOS, [AAID](https://developer.android.com/training/articles/ad-id) on Android) is a device-specific, unique, resettable ID for advertising that allows ddevelopers and marketers to track activity for advertising purposes.
+The **Advertising Identifier** ([IDFA](https://developer.apple.com/documentation/adsupport/asidentifiermanager) on iOS, [AAID](https://developer.android.com/training/articles/ad-id) on Android) is a device-specific, unique, resettable ID for advertising that allows developers and marketers to track activity for advertising purposes.
 
 This npm module allows any mobile application built with React Native to access the Advertising ID, following the OS specific definition and user permissions.
 
@@ -42,7 +42,7 @@ Then run `pod install` in your `ios` folder after installation.
 
 In `info.plist` make sure to add:
 
-```plist
+```xml
 <key>NSUserTrackingUsageDescription</key>
 <string>...</string>
 ```
