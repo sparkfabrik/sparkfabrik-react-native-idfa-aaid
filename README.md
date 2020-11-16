@@ -3,7 +3,7 @@
 
 ## Intro
 
-[React Native](https://reactnative.dev/) is a framework for creating native mobile apps based on React.
+[React Native](https://reactnative.dev/) is a framework for creating native mobile apps based on React. asdf
 
 The **Advertising Identifier** ([IDFA](https://developer.apple.com/documentation/adsupport/asidentifiermanager) on iOS, [AAID](https://developer.android.com/training/articles/ad-id) on Android) is a device-specific, unique, resettable ID for advertising that allows developers and marketers to track activity for advertising purposes.
 
