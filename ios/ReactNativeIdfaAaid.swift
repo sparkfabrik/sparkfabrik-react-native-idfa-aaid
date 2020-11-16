@@ -4,6 +4,11 @@ import Foundation
 
 @objc(ReactNativeIdfaAaid)
 class ReactNativeIdfaAaid: NSObject {
+  
+    @objc
+    static func requiresMainQueueSetup() -> Bool {
+        return false
+    }
 
     @objc(getAdvertisingInfo:withRejecter:)
     func getAdvertisingInfo(resolve: @escaping RCTPromiseResolveBlock, reject: @escaping RCTPromiseRejectBlock) -> Void {
