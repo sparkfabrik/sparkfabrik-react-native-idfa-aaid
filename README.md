@@ -31,7 +31,7 @@ npm install @sparkfabrik/react-native-idfa-aaid
 or
 
 ```sh
-yarn install @sparkfabrik/react-native-idfa-aaid
+yarn add @sparkfabrik/react-native-idfa-aaid
 ```
 
 Then run `pod install` in your `ios` folder after installation.
