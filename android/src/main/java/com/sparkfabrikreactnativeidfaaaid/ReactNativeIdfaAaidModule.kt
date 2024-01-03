@@ -1,4 +1,4 @@
-package com.sparkfabrikreactnativeidfaaaid
+package com.sparkfabrik.rnidfaaaid
 
 import android.util.Log;
 
