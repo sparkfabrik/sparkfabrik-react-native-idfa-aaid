@@ -23,8 +23,12 @@
     "test": "jest",
     "typescript": "tsc --noEmit",
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
+    "lint:fix": "eslint --fix \"**/*.{js,ts,tsx}\"",
     "prepare": "bob build",
-    "release": "release-it"
+    "release": "release-it",
+    "example:start": "cd example && npm start",
+    "example:android": "cd example && npm run android",
+    "example:ios": "cd example && npm run ios"
   },
   "keywords": [
     "react-native",
