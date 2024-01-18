@@ -10,15 +10,15 @@ To get started with the project, run `npm install` in the root directory to inst
 npm install
 ```
 
-While developing, you can run the [example app](/example/) to test your changes.
+While developing, you can run the [example app](/example/) to test your changes. The example app uses [`react-native-test-app`](https://github.com/microsoft/react-native-test-app) to reduce the maintainance cost.
 
-To start the packager:
+Install its dependencies:
 
 ```sh
-npm run example
+npm run example:setup
 ```
 
-To run the example app on Android:
+And then run the example app on Android:
 
 ```sh
 npm run example:android
@@ -27,7 +27,14 @@ npm run example:android
 To run the example app on iOS:
 
 ```sh
+npm run example:setup-ios
 npm run example:ios
+```
+
+If you need, you can manually start the packager via:
+
+```sh
+npm run example:start
 ```
 
 Make sure your code passes TypeScript and ESLint. Run the following to verify:
