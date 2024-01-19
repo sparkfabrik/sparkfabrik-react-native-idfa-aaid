@@ -25,7 +25,9 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-import ReactNativeIdfaAaid, { AdvertisingInfoResponse } from '@sparkfabrik/react-native-idfa-aaid';
+import ReactNativeIdfaAaid, {
+  AdvertisingInfoResponse,
+} from '@sparkfabrik/react-native-idfa-aaid';
 
 type SectionProps = PropsWithChildren<{
   title: string;
@@ -37,7 +39,7 @@ function Section({ children, title }: SectionProps): React.JSX.Element {
   useEffect(() => {
     ReactNativeIdfaAaid.getAdvertisingInfo()
       .then((res: AdvertisingInfoResponse) =>
-        console.log('Advertising info', res),
+        console.log('Advertising info', res)
       )
       .catch(err => {
         console.log(err);
