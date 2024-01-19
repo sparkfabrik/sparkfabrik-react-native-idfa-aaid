@@ -1,6 +1,6 @@
 {
   "name": "@sparkfabrik/react-native-idfa-aaid",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "React Native module to get IDFA (iOS) or AAID (Android)",
   "main": "lib/commonjs/index.js",
   "module": "lib/module/index.js",
