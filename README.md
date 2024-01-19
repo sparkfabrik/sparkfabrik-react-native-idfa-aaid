@@ -1,5 +1,5 @@
 @sparkfabrik/react-native-idfa-aaid
-# React Native module for getting IDFA (iOS) or AAID (Android)
+# React Native module to get IDFA (iOS) or AAID (Android)
 
 ## Intro
 
@@ -40,11 +40,29 @@ Then run `pod install` in your `ios` folder after installation.
 
 ### iOS configuration
 
-In `info.plist` make sure to add:
+For `native` apps, in `info.plist` make sure to add:
 
 ```xml
 <key>NSUserTrackingUsageDescription</key>
 <string>...</string>
+```
+
+For `Expo` apps, in `app.json` make sure to add:
+
+```json
+{
+  "expo": {
+    "plugins": [
+      [
+        "expo-tracking-transparency",
+        {
+          "userTrackingPermission": "..."
+        }
+      ]
+    ]
+  }
+}
+
 ```
 
 ### React Native components
