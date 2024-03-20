@@ -7,6 +7,9 @@ export type AdvertisingInfoResponse = {
 
 type ReactNativeIdfaAaidType = {
   getAdvertisingInfo(): Promise<AdvertisingInfoResponse>;
+  getAdvertisingInfoAndCheckAuthorization(
+    check: boolean
+  ): Promise<AdvertisingInfoResponse>;
 };
 
 const { ReactNativeIdfaAaid } = NativeModules;

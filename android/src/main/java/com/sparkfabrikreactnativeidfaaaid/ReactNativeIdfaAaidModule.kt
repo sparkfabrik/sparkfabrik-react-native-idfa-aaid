@@ -30,4 +30,10 @@ class ReactNativeIdfaAaidModule(private val reactContext: ReactApplicationContex
         }
         promise.resolve(ret)
     }
+
+    @ReactMethod
+    fun getAdvertisingInfoAndCheckAuthorization(check: Boolean, promise: Promise): Unit {
+      // Check not needed on Android
+      getAdvertisingInfo(promise)
+    }
 }
