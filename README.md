@@ -1,4 +1,5 @@
 @sparkfabrik/react-native-idfa-aaid
+
 # React Native module to get IDFA (iOS) or AAID (Android)
 
 ## Intro
@@ -28,6 +29,7 @@ interface AdvertisingInfoResponse {
 ```sh
 npm install @sparkfabrik/react-native-idfa-aaid
 ```
+
 or
 
 ```sh
@@ -62,7 +64,6 @@ For `Expo` apps, in `app.json` make sure to add:
     ]
   }
 }
-
 ```
 
 ### React Native components
@@ -77,6 +78,28 @@ const MyComponent: React.FC = () => {
 
   useEffect(() => {
     ReactNativeIdfaAaid.getAdvertisingInfo()
+      .then((res: AdvertisingInfoResponse) =>
+        !res.isAdTrackingLimited ? setIdfa(res.id) : setIdfa(null),
+      )
+      .catch((err) => {
+        console.log(err);
+        return setIdfa(null);
+      });
+  }, []);
+```
+
+#### iOS 17.4
+
+In order to prevent a bug present in iOS 17.4 we also expose the `getAdvertisingInfoAndCheckAuthorization(check: boolean)` which aims to solve the problem of `ATT Tracking Manager` returning status `denied` even if the ATT modal was not yet displayed to the user.
+
+```js
+import ReactNativeIdfaAaid, { AdvertisingInfoResponse } from '@sparkfabrik/react-native-idfa-aaid';
+
+const MyComponent: React.FC = () => {
+  const [idfa, setIdfa] = useState<string | null>();
+
+  useEffect(() => {
+    ReactNativeIdfaAaid.getAdvertisingInfoAndCheckAuthorization(true)
       .then((res: AdvertisingInfoResponse) =>
         !res.isAdTrackingLimited ? setIdfa(res.id) : setIdfa(null),
       )
