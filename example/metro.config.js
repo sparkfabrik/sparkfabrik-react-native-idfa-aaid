@@ -1,6 +1,8 @@
 const path = require('path');
 const { makeMetroConfig } = require('@rnx-kit/metro-config');
 
+const localModulePath = path.resolve(__dirname, '../');
+
 module.exports = makeMetroConfig({
   transformer: {
     getTransformOptions: async () => ({
@@ -10,7 +12,10 @@ module.exports = makeMetroConfig({
       },
     }),
   },
-  watchFolders: [
-    path.join(__dirname, 'node_modules', '@sparkfabrik/react-native-idfa-aaid'),
-  ],
+  resolver: {
+    extraNodeModules: {
+      '@sparkfabrik/react-native-idfa-aaid': localModulePath,
+    },
+  },
+  watchFolders: [localModulePath],
 });
